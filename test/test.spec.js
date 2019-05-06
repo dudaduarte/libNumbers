@@ -1,212 +1,72 @@
 let chai = require('chai');
 let expect = chai.expect;
-let cpfValidator = require('../lib/libCPF.js');
-let cardValidator = require('../lib/libCreditCard.js');
-let algFile = require('../lib/libAlgarismos.js');
-
-describe('Biblioteca CPF', () => {
-
-  describe('função cpfValidator', () => {
-
-    describe('cpfs válidos', () => {
-
-      it('meu cpf', () => {
-
-        expect(cpfValidator(41250735890)).to.equal(true);
-
-      });
-      it('meu cpf', () => {
-
-        expect(cpfValidator('412.507.358-90')).to.equal(true);
-
-      });
-      it('cpf válido', () => {
-
-        expect(cpfValidator('23560525420')).to.equal(true);
-
-      });
-      it('cpf válido', () => {
-
-        expect(cpfValidator(40942348885)).to.equal(true);
-
-      });
-      it('cpf válido', () => {
-
-        expect(cpfValidator('40942348885')).to.equal(true);
-
-      });
-    });
-    describe('cpfs INválidos', () => {
-
-      it('cpf INválido', () => {
-
-        expect(cpfValidator('40955548885')).to.equal(false);
-
-      });
-      it('cpf INválido', () => {
-
-        expect(cpfValidator('123.456.789-01')).to.equal(false);
-
-      });
-      it('cpf INválido', () => {
-
-        expect(cpfValidator(98765432103)).to.equal(false);
-
-      });
-      it('cpf INválido', () => {
-
-        expect(cpfValidator('11111111111')).to.equal(false);
-
-      });
-      it('cpf INválido', () => {
-
-        expect(cpfValidator('99999999999')).to.equal(false);
-
-      });
-
-    });
-
-  });
-
-});
-
-describe('Biblioteca Cartão de Crédito', () => {
-
-  describe('função cardValidator', () => {
-
-    describe('cartões válidos', () => {
-
-      it('meu cartão virtual', () => {
-
-        expect(cardValidator(5502099757664036)).to.equal(true);
-
-      });
-      it('cartão válido aleatório', () => {
-
-        expect(cardValidator('4012 0010 3714 1112')).to.equal(true);
-
-      });
-      it('cartão válido aleatório', () => {
-
-        expect(cardValidator('5442054108091705')).to.equal(true);
-
-      });
-      it('cartão válido aleatório', () => {
-
-        expect(cardValidator(30293810466644)).to.equal(true);
-
-      });
-      it('cartão válido aleatório', () => {
-
-        expect(cardValidator('6011137424214298')).to.equal(true);
-
-      });
-      it('cartão válido aleatório', () => {
-
-        expect(cardValidator(372181965977158)).to.equal(true);
-
-      });
-
-    });
-    describe('cartões INválidos', () => {
-
-      it('cartão INválido', () => {
-
-        expect(cardValidator(123456789012345)).to.equal(false);
-
-      });
-      it('cartão INválido', () => {
-
-        expect(cardValidator('2003004005060708')).to.equal(false);
-
-      });
-      it('cartão INválido', () => {
-
-        expect(cardValidator('472837284059123')).to.equal(false);
-
-      });
-      it('cartão INválido', () => {
-
-        expect(cardValidator(820170273045072)).to.equal(false);
-
-      });
-      it('cartão INválido', () => {
-
-        expect(cardValidator('5502199727664036')).to.equal(false);
-
-      });
-      it('cartão INválido', () => {
-
-        expect(cardValidator(4012001037141135)).to.equal(false);
-
-      });
-
-    });
-
-  });
-
-});
+let algFile = require('../lib/libNumbers.js');
 
 describe('Biblioteca Algarismos', () => {
 
   describe('Roman to Int', () => {
 
-    it('5 to V', () => {
+    it('II to 2', () => {
+
+      expect(algFile.romanToInt('II')).to.equal(2);
+
+    });
+    it('V to 5', () => {
 
       expect(algFile.romanToInt('V')).to.equal(5);
 
     });
-    it('26 to XXVI', () => {
+    it('XXVI to 26', () => {
 
       expect(algFile.romanToInt('XXVI')).to.equal(26);
 
     });
-    it('19 to XIX', () => {
+    it('XIX to 19', () => {
 
       expect(algFile.romanToInt('XIX')).to.equal(19);
 
     });
-    it('19 to xix', () => {
+    it('xix to 19', () => {
 
       expect(algFile.romanToInt('xix')).to.equal(19);
 
     });
-    it('398 to CCCXCVIII', () => {
+    it('CCCXCVIII to 398', () => {
 
       expect(algFile.romanToInt('CCCXCVIII')).to.equal(398);
 
     });
-    it('4730 to MMMMDCCXXX', () => {
+    it('MMMMDCCXXX to 4730', () => {
 
       expect(algFile.romanToInt('MMMMDCCXXX')).to.equal(4730);
 
     });
-    it('4999 to MMMMCMXCIX', () => {
+    it('MMMMCMXCIX to 4999', () => {
 
       expect(algFile.romanToInt('MMMMCMXCIX')).to.equal(4999);
 
     });
-    it('476 to CDLXXVI', () => {
+    it('CDLXXVI to 476', () => {
 
       expect(algFile.romanToInt('CDLXXVI')).to.equal(476);
 
     });
-    it('92 to XCII', () => {
+    it('XCII to 92', () => {
 
       expect(algFile.romanToInt('XCII')).to.equal(92);
 
     });
-    it('1699 to MDCXCIX', () => {
+    it('MDCXCIX to 1699', () => {
 
       expect(algFile.romanToInt('MDCXCIX')).to.equal(1699);
 
     });
-    it('2203 to MMCCIII', () => {
+    it('MMCCIII to 2203', () => {
 
       expect(algFile.romanToInt('MMCCIII')).to.equal(2203);
 
     });
-    it('99 to xcic', () => {
+    it('xcic to 99', () => {
 
       expect(algFile.romanToInt('xcix')).to.equal(99);
 
