@@ -1,3 +1,5 @@
+/*eslint-disable */
+
 let chai = require('chai');
 let expect = chai.expect;
 let algFile = require('../lib/lib-arabic-roman.js');
