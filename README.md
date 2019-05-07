@@ -1,7 +1,7 @@
 # Conversor de algarismos arábicos <-> romanos v.1.0.0
 
 **Esta biblioteca destina-se à conversão de algarismos arábicos para romanos, e vice-versa.**
-Na versão atual é capaz de converter números arábicos de 1 a 4999 para seus equivalentes algarismos romanos. Também realiza a conversão de romanos para arábicos, aceitando o input tanto em letras maiúsculas, quanto minúsculas.
+Na versão atual é capaz de converter números arábicos inteiros de 1 a 4999 para seus equivalentes algarismos romanos. Também realiza a conversão de romanos para arábicos, aceitando o input tanto em letras maiúsculas, quanto minúsculas.
 
 ## Como instalar:
 
@@ -36,7 +36,8 @@ $  npm install lib-arabic-roman
 ## roadmap oficial do projeto
 
 #### versão 1.0.0 (released)
-- funcionalidades: conversão de números de 1 a 4999, de algarismos arábicos para romanos e de romanos para arábicos.
-- aceitando input de números e strings.
-- não aceita números que se iniciem com zero, apenas strings (ex: não aceita 010, mas aceita '010').
-- na conversão de algarismos romanos, aceita a escrita dos algarismos tanto em letras maiúsculas, quanto minúsculas.
+- Funcionalidades: conversão de números de 1 a 4999, de algarismos arábicos para romanos e de romanos para arábicos.
+- Aceitando input de números e strings.
+- Não aceita números que se iniciem com zero, apenas strings (ex: não aceita 010, mas aceita '010').
+- Não converte números decimais. Nesses casos, a biblioteca converterá o número inteiro correspondente, desconsiderando as casas decimais.
+- Na conversão de algarismos romanos, aceita a escrita dos algarismos tanto em letras maiúsculas, quanto minúsculas.
