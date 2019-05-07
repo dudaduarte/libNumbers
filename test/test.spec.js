@@ -1,6 +1,6 @@
 let chai = require('chai');
 let expect = chai.expect;
-let algFile = require('../lib/libNumbers.js');
+let algFile = require('../lib/lib-arabic-roman.js');
 
 describe('Biblioteca Algarismos', () => {
 
@@ -80,6 +80,11 @@ describe('Biblioteca Algarismos', () => {
       expect(algFile.intToRoman('5')).to.equal('V');
 
     });
+    it('5.5 to V - só aceita números inteiros', () => {
+
+      expect(algFile.intToRoman('5.5')).to.equal('V');
+
+    });
     it('26 to XXVI', () => {
 
       expect(algFile.intToRoman('26')).to.equal('XXVI');
@@ -120,9 +125,19 @@ describe('Biblioteca Algarismos', () => {
       expect(algFile.intToRoman(476)).to.equal('CDLXXVI');
 
     });
-    it('0092 to XCII', () => {
+    it('092 to XCII', () => {
 
-      expect(algFile.intToRoman('0092')).to.equal('XCII');
+      expect(algFile.intToRoman(092)).to.equal('XCII');
+
+    });
+    it('0000000000003 to III', () => {
+
+      expect(algFile.intToRoman(0000000000003)).to.equal('III');
+
+    });
+    it('00000000000040 to XL', () => {
+
+      expect(algFile.intToRoman('00000000000040')).to.equal('XL');
 
     });
     it('000000000 to error', () => {
