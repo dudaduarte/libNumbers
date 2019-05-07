@@ -87,7 +87,7 @@ describe('Biblioteca Algarismos', () => {
       expect(algFile.intToRoman('5.5')).to.equal('V');
 
     });
-    it('10.8 to V - só aceita números inteiros', () => {
+    it('10.8 to X - só aceita números inteiros', () => {
 
       expect(algFile.intToRoman('10.8')).to.equal('X');
 
