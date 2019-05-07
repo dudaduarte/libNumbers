@@ -130,9 +130,9 @@ describe('Biblioteca Algarismos', () => {
       expect(algFile.intToRoman(092)).to.equal('XCII');
 
     });
-    it('0000000000003 to III', () => {
+    it('000003 to III', () => {
 
-      expect(algFile.intToRoman(0000000000003)).to.equal('III');
+      expect(algFile.intToRoman(000003)).to.equal('III');
 
     });
     it('00000000000040 to XL', () => {
